@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\BeachResortController as AdminBeachResortController;
+use App\Http\Controllers\Guest\PageController as GuestPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/home',[GuestPageController::class, 'home'])->name('guest.beachresorts.home');
+Route::get('/index',[AdminBeachResortController::class, 'index'])->name('admin.beachresorts.index');
+Route::get('/show',[AdminBeachResortController::class, 'show'])->name('admin.beachresorts.show');
