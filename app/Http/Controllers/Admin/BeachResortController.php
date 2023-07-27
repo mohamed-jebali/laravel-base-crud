@@ -47,7 +47,8 @@ class BeachResortController extends Controller
      */
     public function show($id)
     {
-        return view('admin.beachresorts.index');
+        // $beach = BeachResort::findOrFail($id);
+        return view('admin.beachresorts.show');
     }
 
     /**
@@ -58,7 +59,7 @@ class BeachResortController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.beachresorts.edit');
     }
 
     /**
