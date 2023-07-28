@@ -48,7 +48,7 @@
     <label for="has_soccer_field" class="form-label">Soccer Field</label>
     <input type="text" class="form-control" id="has_soccer_field" name='has_soccer_field' value='{{$beach->has_soccer_field}}'>
   </div>
-  <button type="submit" class="btn btn-primary">Edit Comic</button>
+  <button type="submit" class="btn btn-primary">Edit</button>
   <button type="reset" class="btn btn-warning">Reset</button>
 </form>
         </div>
