@@ -95,6 +95,8 @@ class BeachResortController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $beach = BeachResort::findOrFail($id);
+        $beach->delete();
+        return redirect()->route('admin.beachresorts.index')->with('delete', $beach->name);
     }
 }

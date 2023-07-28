@@ -24,11 +24,32 @@
                         Show
                     </a>
                 </button>
-                   <button type="button" class="btn btn-outline-primary">Delete</button>
+                <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-outline-primary">Delete</button>
+                  </form>
             </div>
             </div>
         </div>
     </div>
     @endforeach  
 </div>
+@endsection
+
+
+@section('custom-scripts-tail')
+<script>
+  const deleteButtons = document.querySelectorAll('.delete-button');
+
+  deleteButtons.forEach(element => {
+    element.addEventListener('submit', function (event){
+      event.preventDefault();
+      const popUpWindow = window.confirm('Are you sure you want to delete this Beach Resort?');
+      if (popUpWindow){
+        this.submit();
+      }
+    });
+  });
+</script>
 @endsection

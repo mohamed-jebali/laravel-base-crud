@@ -20,8 +20,12 @@
             <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                    <button type="button" class="btn btn-outline-primary">
                     <a class='text-decoration-none' href="{{ route ('admin.beachresorts.edit', $beach->id)}}">Edit</a>
-                </button>
-                   <button type="button" class="btn btn-outline-primary">Delete</button>
+                   </button>
+                   <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-outline-primary">Delete</button>
+                  </form>
             </div>
             </div>
         </div>

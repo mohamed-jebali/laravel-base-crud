@@ -21,3 +21,4 @@ Route::get('/show/{id}',[AdminBeachResortController::class, 'show'])->name('admi
 Route::get('/create',[AdminBeachResortController::class, 'create'])->name('admin.beachresorts.create');
 Route::get('/edit/{id}',[AdminBeachResortController::class, 'edit'])->name('admin.beachresorts.edit');
 Route::put('/admin/{id}',[AdminBeachResortController::class, 'update'])->name('admin.beachresorts.update');
+Route::delete('/admin/{id}', [AdminBeachResortController::class, 'destroy'])->name('admin.beachresorts.destroy');
