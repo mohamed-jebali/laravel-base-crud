@@ -22,7 +22,9 @@
                    <button type="button" class="btn btn-outline-primary">
                     <a class='text-decoration-none' href="{{ route ('admin.beachresorts.edit', $beach->id)}}">Edit</a>
                 </button>
-                   <button type="button" class="btn btn-outline-primary">Create</button>
+                   <button type="button" class="btn btn-outline-primary">
+                   <a class='text-decoration-none' href="{{ route ('admin.beachresorts.create')}}">Create</a>
+                </button>
                    <button type="button" class="btn btn-outline-primary">Show</button>
                    <button type="button" class="btn btn-outline-primary">Delete</button>
             </div>

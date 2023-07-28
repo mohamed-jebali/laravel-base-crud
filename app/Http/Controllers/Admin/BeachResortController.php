@@ -16,7 +16,7 @@ class BeachResortController extends Controller
     public function index()
     {
         $list_beach = BeachResort::all();
-        return view('admin.beachresorts.index',compact('list_beach'));
+        return view('admin.beachresorts.index', compact('list_beach'));
     }
 
     /**

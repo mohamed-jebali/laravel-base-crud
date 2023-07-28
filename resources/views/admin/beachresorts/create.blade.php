@@ -9,45 +9,45 @@
             <h1 class='text-center mb-5'>
                 Create Beach Resort
             </h1>
-   <form action="{{ route ('admin.beachresorts.store', $beach->id)}}" method='POST'>
+   <form action="{{ route ('admin.beachresorts.create')}}" method='POST'>
    @csrf
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" name='name' value='{{$beach->name}}'>
+    <input type="text" class="form-control" id="name" name='name'>
   </div>
   <div class="mb-3">
     <label for="location" class="form-label">Location</label>
-    <input type="text" class="form-control" id="location" name='location' value='{{$beach->location}}'>
+    <input type="text" class="form-control" id="location" name='location'>
   </div>
   <div class="mb-3">
     <label for="num_umbrellas" class="form-label">Available Umbrellas</label>
-    <input type="number" class="form-control" id="num_umbrellas" name='num_umbrellas' value='{{$beach->num_umbrellas}}'>
+    <input type="number" class="form-control" id="num_umbrellas" name='num_umbrellas'>
   </div>
   <div class="mb-3">
     <label for="num_sunbeds" class="form-label">Number Umbrellas</label>
-    <input type="number" class="form-control" id="num_sunbeds" name='num_sunbeds' value='{{$beach->num_sunbeds}}'>
+    <input type="number" class="form-control" id="num_sunbeds" name='num_sunbeds'>
   </div>
   <div class="mb-3">
     <label for="umbrella_price" class="form-label">Number Umbrellas</label>
-    <input type="number" class="form-control" id="umbrella_price" name='umbrella_price' value='{{$beach->umbrella_price}}'>
+    <input type="number" class="form-control" id="umbrella_price" name='umbrella_price'>
   </div>
   <div class="mb-3">
     <label for="opening_date" class="form-label">Opening Date</label>
-    <input type="date" class="form-control" id="opening_date" name='opening_date' value='{{$beach->opening_date}}'>
+    <input type="date" class="form-control" id="opening_date" name='opening_date'>
   </div>
   <div class="mb-3">
     <label for="closing_date" class="form-label">Closing Date</label>
-    <input type="date" class="form-control" id="closing_date" name='closing_date' value='{{$beach->closing_date}}'>
+    <input type="date" class="form-control" id="closing_date" name='closing_date'>
   </div>
   <div class="mb-3">
     <label for="has_beach_volley" class="form-label">Beach Volley Field</label>
-    <input type="text" class="form-control" id="has_beach_volley" name='has_beach_volley' value='{{$beach->has_beach_volley}}'>
+    <input type="text" class="form-control" id="has_beach_volley" name='has_beach_volley'>
   </div>
   <div class="mb-3">
     <label for="has_soccer_field" class="form-label">Soccer Field</label>
-    <input type="text" class="form-control" id="has_soccer_field" name='has_soccer_field' value='{{$beach->has_soccer_field}}'>
+    <input type="text" class="form-control" id="has_soccer_field" name='has_soccer_field'>
   </div>
-  <button type="submit" class="btn btn-primary">Edit Comic</button>
+  <button type="submit" class="btn btn-primary">Create Beach Resort</button>
   <button type="reset" class="btn btn-warning">Reset</button>
 </form>
         </div>
