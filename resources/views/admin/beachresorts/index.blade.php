@@ -26,7 +26,7 @@
                    <a class='text-decoration-none' href="{{ route ('admin.beachresorts.create')}}">Create</a>
                 </button>
                    <button type="button" class="btn btn-outline-primary">Show</button>
-                   <button type="button" class="btn btn-outline-primary">Delete</button>
+                   <button type="button" class="btn btn-outline-primary">PROVA</button>
             </div>
             </div>
         </div>
