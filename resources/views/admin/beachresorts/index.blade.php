@@ -11,12 +11,6 @@
             <div class="card-body">
             <h5 class="card-title"><span class='fw-bold'>Beach Name:</span> {{$beach->name}}</h5>
             <p class="card-text"><span class='fw-bold'>Location: </span>{{$beach->location}}</p>
-            <p class="card-text"><span class='fw-bold'>Available Umbrellas: </span>{{$beach->num_umbrellas}}</p>
-            <p class="card-text"><span class='fw-bold'>Umbrella Price: </span>{{$beach->umbrella_price . " $"}}</p>
-            <p class="card-text"><span class='fw-bold'>Opening Date: </span>{{$beach->opening_date}}</p>
-            <p class="card-text"><span class='fw-bold'>Closing Date: </span>{{$beach->closing_date}}</p>
-            <p class="card-text"><span class='fw-bold'>Beach Volley Field: </span>{{$beach->has_beach_volley}}</p>
-            <p class="card-text"><span class='fw-bold'>Soccer Field:</span>{{$beach->has_soccer_field}}</p>
             <div class="row">
             <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                    <button type="button" class="btn btn-outline-primary">
@@ -25,8 +19,12 @@
                    <button type="button" class="btn btn-outline-primary">
                    <a class='text-decoration-none' href="{{ route ('admin.beachresorts.create')}}">Create</a>
                 </button>
-                   <button type="button" class="btn btn-outline-primary">Show</button>
-                   <button type="button" class="btn btn-outline-primary">PROVA</button>
+                   <button type="button" class="btn btn-outline-primary">
+                    <a href="{{ route ('admin.beachresorts.show', $beach->id)}}">
+                        Show
+                    </a>
+                </button>
+                   <button type="button" class="btn btn-outline-primary">Delete</button>
             </div>
             </div>
         </div>

@@ -54,8 +54,8 @@ class BeachResortController extends Controller
      */
     public function show($id)
     {
-        // $beach = BeachResort::findOrFail($id);
-        return view('admin.beachresorts.show');
+        $beach = BeachResort::findOrFail($id);
+        return view('admin.beachresorts.show',compact('beach'));
     }
 
     /**
