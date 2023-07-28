@@ -21,7 +21,7 @@
                 </button>
                    <button type="button" class="btn btn-outline-primary">
                     <a href="{{ route ('admin.beachresorts.show', $beach->id)}}">
-                        Show
+                        show
                     </a>
                 </button>
                 <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
