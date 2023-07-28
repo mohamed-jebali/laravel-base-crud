@@ -16,7 +16,8 @@ use App\Http\Controllers\Guest\PageController as GuestPageController;
 */
 
 Route::get('/home',[GuestPageController::class, 'home'])->name('guest.beachresorts.home');
-Route::get('/index',[AdminBeachResortController::class, 'index'])->name('admin.beachresorts.index');
-Route::get('/show',[AdminBeachResortController::class, 'show'])->name('admin.beachresorts.show');
+Route::get('/',[AdminBeachResortController::class, 'index'])->name('admin.beachresorts.index');
+Route::get('/show/{id}',[AdminBeachResortController::class, 'show'])->name('admin.beachresorts.show');
 Route::get('/create',[AdminBeachResortController::class, 'create'])->name('admin.beachresorts.create');
-Route::get('/edit',[AdminBeachResortController::class, 'edit'])->name('admin.beachresorts.edit');
+Route::get('/edit/{id}',[AdminBeachResortController::class, 'edit'])->name('admin.beachresorts.edit');
+Route::put('/admin/{id}',[AdminBeachResortController::class, 'update'])->name('admin.beachresorts.update');

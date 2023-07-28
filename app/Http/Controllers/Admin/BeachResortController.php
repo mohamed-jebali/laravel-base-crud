@@ -15,7 +15,8 @@ class BeachResortController extends Controller
      */
     public function index()
     {
-        return view('admin.beachresorts.index');
+        $list_beach = BeachResort::all();
+        return view('admin.beachresorts.index',compact('list_beach'));
     }
 
     /**
@@ -25,7 +26,8 @@ class BeachResortController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('admin.beachresorts.create');
     }
 
     /**
@@ -36,7 +38,12 @@ class BeachResortController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newBeachResort = new BeachResort();
+        $newBeachResort->fill($data);
+        $newBeachResort->save();
+
+        return redirect()->route('admin.beachresorts.show', $newBeachResort->id);
     }
 
     /**
@@ -59,7 +66,8 @@ class BeachResortController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.beachresorts.edit');
+        $beach = BeachResort::findOrFail($id);
+        return view('admin.beachresorts.edit',compact('beach'));
     }
 
     /**
@@ -71,7 +79,12 @@ class BeachResortController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $beach = BeachResort::findOrFail($id);
+
+        $beach->update($data);
+
+        return redirect()->route('admin.beachresorts.show', $beach->id);
     }
 
     /**
