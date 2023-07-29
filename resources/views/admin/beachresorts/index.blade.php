@@ -27,7 +27,7 @@
                 <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
                       @csrf
                       @method('DELETE')
-                      <button type="submit" class="btn btn-outline-primary">Deleteee</button>
+                      <button type="submit" class="btn btn-outline-primary">Deleteeee</button>
                   </form>
             </div>
             </div>
