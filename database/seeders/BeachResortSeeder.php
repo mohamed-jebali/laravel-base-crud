@@ -16,7 +16,7 @@ class BeachResortSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 10 ; $i++) { 
+        for ($i=0; $i < 20 ; $i++) { 
             $newBeach = new BeachResort();
             $newBeach->name = $faker->name();
             $newBeach->location = $faker->city;

@@ -17,13 +17,13 @@
             <p class="card-text"><span class='fw-bold'>Beach Volley Field: </span>{{$beach->has_beach_volley}}</p>
             <p class="card-text"><span class='fw-bold'>Soccer Field:</span>{{$beach->has_soccer_field}}</p>
             <div class="row">
-            <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                   <button type="button" class="btn btn-outline-primary">
+                <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
+                   @csrf
+                   @method('DELETE')
+            <div class="btn-group btn-group-sm d-flex mx-auto" role="group" aria-label="Small button group">
+                   <button type="button" class="btn btn-outline-primary hover-text-white">
                     <a class='text-decoration-none' href="{{ route ('admin.beachresorts.edit', $beach->id)}}">Edit</a>
                    </button>
-                   <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
-                      @csrf
-                      @method('DELETE')
                       <button type="submit" class="btn btn-outline-primary">Delete</button>
                   </form>
             </div>
@@ -31,4 +31,21 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('custom-scripts-tail')
+<script>
+  const deleteButtons = document.querySelectorAll('.delete-button');
+
+  deleteButtons.forEach(element => {
+    element.addEventListener('submit', function (event){
+      event.preventDefault();
+      const popUpWindow = window.confirm('Are you sure you want to delete this Beach Resort?');
+      if (popUpWindow){
+        this.submit();
+      }
+    });
+  });
+</script>
 @endsection

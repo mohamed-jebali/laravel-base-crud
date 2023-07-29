@@ -10,7 +10,7 @@
     @yield('custom-stylesheets')
     @yield('custom-scripts-head')
 </head>
-<body>
+<body class='bg-website'>
     @include('partials.header')
 
     <main>
