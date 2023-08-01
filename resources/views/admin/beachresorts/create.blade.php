@@ -5,11 +5,26 @@
 @section('main-content')
 <div class="container py-5">
     <div class="row">
+
+
+
+    <div class="col-8 mx-auto mb-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+
         <div class="col-8 mx-auto">
             <h1 class='text-center mb-5'>
                 Create Beach Resort
             </h1>
-   <form action="{{ route ('admin.beachresorts.create')}}" method='POST'>
+   <form action="{{ route ('admin.beachresorts.store')}}" method='POST'>
    @csrf
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
@@ -28,8 +43,8 @@
     <input type="number" class="form-control" id="num_sunbeds" name='num_sunbeds'>
   </div>
   <div class="mb-3">
-    <label for="umbrella_price" class="form-label">Number Umbrellas</label>
-    <input type="number" class="form-control" id="umbrella_price" name='umbrella_price'>
+    <label for="umbrella_price" class="form-label">Umbrella's Price</label>
+    <input type="text" class="form-control" id="umbrella_price" name='umbrella_price'>
   </div>
   <div class="mb-3">
     <label for="opening_date" class="form-label">Opening Date</label>
@@ -41,11 +56,11 @@
   </div>
   <div class="mb-3">
     <label for="has_beach_volley" class="form-label">Beach Volley Field</label>
-    <input type="text" class="form-control" id="has_beach_volley" name='has_beach_volley'>
+    <input type="text" class="form-control" id="has_beach_volley" name='has_beach_volley' placeholder='insert Available or Not Available' >
   </div>
   <div class="mb-3">
     <label for="has_soccer_field" class="form-label">Soccer Field</label>
-    <input type="text" class="form-control" id="has_soccer_field" name='has_soccer_field'>
+    <input type="text" class="form-control" id="has_soccer_field" name='has_soccer_field'  placeholder='insert Available or Not Available'>
   </div>
   <button type="submit" class="btn btn-primary">Create Beach Resort</button>
   <button type="reset" class="btn btn-warning">Reset</button>

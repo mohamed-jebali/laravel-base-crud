@@ -25,8 +25,8 @@ class BeachResortSeeder extends Seeder
             $newBeach->umbrella_price = $faker->numberBetween(20,100);
             $newBeach->opening_date = $faker->dateTimeBetween('-1 week', '+1 week');
             $newBeach->closing_date = $faker->dateTimeBetween('-1 week','+1 week');
-            $newBeach->has_beach_volley = $faker->boolean();
-            $newBeach->has_soccer_field = $faker->boolean();
+            $newBeach->has_beach_volley = $faker->randomElement(['Available','Not Available']);
+            $newBeach->has_soccer_field = $faker->randomElement(['Available','Not Available']);
             $newBeach->save();
         }
     }

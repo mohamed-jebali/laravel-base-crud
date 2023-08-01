@@ -5,6 +5,19 @@
 @section('main-content')
 <div class="container py-5">
     <div class="row">
+
+    <div class="col-8 mx-auto mb-4">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+
         <div class="col-8 mx-auto">
             <h1 class='text-center mb-5'>
                 Edit Beach Resort
@@ -29,8 +42,8 @@
     <input type="number" class="form-control" id="num_sunbeds" name='num_sunbeds' value='{{$beach->num_sunbeds}}'>
   </div>
   <div class="mb-3">
-    <label for="umbrella_price" class="form-label">Number Umbrellas</label>
-    <input type="number" class="form-control" id="umbrella_price" name='umbrella_price' value='{{$beach->umbrella_price}}'>
+    <label for="umbrella_price" class="form-label">Umbrella's Price</label>
+    <input type="text" class="form-control" id="umbrella_price" name='umbrella_price' value='{{$beach->umbrella_price}}'>
   </div>
   <div class="mb-3">
     <label for="opening_date" class="form-label">Opening Date</label>

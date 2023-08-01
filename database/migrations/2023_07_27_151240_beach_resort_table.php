@@ -23,8 +23,8 @@ return new class extends Migration
             $table->decimal('umbrella_price', 8, 2);
             $table->date('opening_date');
             $table->date('closing_date');
-            $table->boolean('has_beach_volley')->default(false);
-            $table->boolean('has_soccer_field')->default(false);
+            $table->string('has_beach_volley');
+            $table->string('has_soccer_field');
 
             $table->timestamps();
         });

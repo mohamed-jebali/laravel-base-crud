@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBeachRequest;
+use App\Http\Requests\EditBeachRequest;
 use Illuminate\Http\Request;
 use App\Models\BeachResort;
+use Illuminate\Validation\Rule;
 
 class BeachResortController extends Controller
 {
@@ -36,10 +39,10 @@ class BeachResortController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBeachRequest $request)
     {
-        $data = $request->all();
         $newBeachResort = new BeachResort();
+        $data = $request->validated();
         $newBeachResort->fill($data);
         $newBeachResort->save();
 
@@ -77,7 +80,7 @@ class BeachResortController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditBeachRequest $request, $id)
     {
         $data = $request->all();
         $beach = BeachResort::findOrFail($id);
