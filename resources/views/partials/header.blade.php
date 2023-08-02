@@ -15,8 +15,9 @@
             <a class="nav-link" href="{{route ('admin.beachresorts.index') }}">Resorts</a>
         </li>
       </ul>
-      <li class="nav-item ms-auto">
-            <a class="nav-link" href="{{ route ('admin.beachresorts.create')}}">Create a New Beach Resort</a>
+      <li class="nav-item ms-auto d-flex">
+            <a class="nav-link me-4" href="{{ route ('admin.beachresorts.create')}}"><i class="fa-solid fa-plus fa-xl" title='add new resort'></i></a>
+            <a class="nav-link" href="{{ route ('admin.beachresorts.trashed')}}"><i class="fa-solid fa-trash fa-xl" title='trashed'></i></a>
       </li>
     </div>
   </div>

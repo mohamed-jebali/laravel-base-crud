@@ -25,7 +25,7 @@ return new class extends Migration
             $table->date('closing_date');
             $table->string('has_beach_volley');
             $table->string('has_soccer_field');
-
+            $table->softDeletes();
             $table->timestamps();
         });
     }

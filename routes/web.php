@@ -22,4 +22,6 @@ Route::get('/create',[AdminBeachResortController::class, 'create'])->name('admin
 Route::post('/admin',[AdminBeachResortController::class, 'store'])->name('admin.beachresorts.store');
 Route::get('/edit/{id}',[AdminBeachResortController::class, 'edit'])->name('admin.beachresorts.edit');
 Route::put('/admin/{id}',[AdminBeachResortController::class, 'update'])->name('admin.beachresorts.update');
+Route::get('/admin/trashed', [AdminBeachResortController::class, 'trashed'])->name('admin.beachresorts.trashed');
+Route::delete('/deleted/{id}', [AdminBeachResortController::class, 'restore'])->name('admin.beachresorts.restore');
 Route::delete('/admin/{id}', [AdminBeachResortController::class, 'destroy'])->name('admin.beachresorts.destroy');
