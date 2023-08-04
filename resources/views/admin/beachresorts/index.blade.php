@@ -18,6 +18,7 @@
             <div class="btn-group btn-group-sm d-flex mx-auto" role="group" aria-label="Small button group">
                <button type="button" class="btn btn-outline-primary hover-text-white">
                     <a class='text-decoration-none' href="{{ route ('admin.beachresorts.edit', $beach->id)}}">Edit</a>
+<<<<<<< HEAD
                </button>
                <button type="button" class="btn btn-outline-primary hover-text-white">
                     <a class='text-decoration-none' href="{{ route ('admin.beachresorts.show', $beach->id)}}">
@@ -28,6 +29,22 @@
                         Delete
                       </button>
                 </form>
+=======
+                </button>
+                   <button type="button" class="btn btn-outline-primary">
+                   <a class='text-decoration-none' href="{{ route ('admin.beachresorts.create')}}">Create</a>
+                </button>
+                   <button type="button" class="btn btn-outline-primary">
+                    <a href="{{ route ('admin.beachresorts.show', $beach->id)}}">
+                        show
+                    </a>
+                </button>
+                <form class='delete-button' action="{{ route ('admin.beachresorts.destroy', $beach->id) }}" method='POST'>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-outline-primary">Deleteee</button>
+                  </form>
+>>>>>>> 8003ac8860d236defccc5bd47663d23ee1815a6e
             </div>
             </div>
         </div>
