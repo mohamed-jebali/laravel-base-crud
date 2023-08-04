@@ -4,6 +4,28 @@
 
 @section('main-content')
 <div class="container container-md p-5 p-md-0">
+  <div class="row justify-content-md-center justify-content-lg-around"">
+  @if(session ('delete'))
+    <div class="col-12 col-md-10 col-lg-11 alert alert-warn">
+        The Resort {{ session('delete') }}  has been deleted  
+      </div>
+    </div>
+  @elseif(session('update'))
+  <div class="col-12 col-md-10 col-lg-11 alert alert-primary">
+        The Resort {{ session('update') }}  has been updated  
+      </div>
+  </div>
+  @elseif(session('created'))
+  <div class="col-12 col-md-10 col-lg-11 alert alert-success">
+        The Resort {{ session('created') }}  has been created 
+      </div>
+  </div>
+  @elseif(session('restored'))
+  <div class="col-12 col-md-10 col-lg-11 alert alert-info">
+        The Resort {{ session('restored') }}  has been restored 
+      </div>
+  </div>
+  @endif
     <div class="row justify-content-md-center justify-content-lg-around">
         @foreach($list_beach as $beach)
         <div class="card p-0 col-12 col-md-5 col-lg-3 mb-3 me-md-4 me-lg-1">

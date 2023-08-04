@@ -46,7 +46,7 @@ class BeachResortController extends Controller
         $newBeachResort->fill($data);
         $newBeachResort->save();
 
-        return redirect()->route('admin.beachresorts.show', $newBeachResort->id);
+        return redirect()->route('admin.beachresorts.index', $newBeachResort->id)->with('created', $newBeachResort->name);
     }
 
     /**
@@ -87,7 +87,7 @@ class BeachResortController extends Controller
 
         $beach->update($data);
 
-        return redirect()->route('admin.beachresorts.show', $beach->id);
+        return redirect()->route('admin.beachresorts.index', $beach->id)->with('update', $beach->name);
     }
 
     /**
